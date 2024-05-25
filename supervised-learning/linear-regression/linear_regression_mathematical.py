@@ -18,10 +18,9 @@ try:
 except ImportError as e:
   print(e.msg)
 
-# csvData = pd.read_csv('') --> Since no CSV we shall be using DataFrame.
 csvData = pd.read_csv('https://raw.githubusercontent.com/AdiPersonalWorks/Random/master/student_scores%20-%20student_scores.csv')
 
-# print(csvData)
+
 mplt.show()
 
 # Method-1
@@ -61,19 +60,20 @@ def gradientDescent(currentM, currentB, points, L):
   b = currentB - bGradient*L
   return m,b
 
-m = 0
-b = 0
-L = 0.001
-epochs = 100
+if __name__ == "__main__":
+  m = 0
+  b = 0
+  L = 0.001
+  epochs = 100
 
-for _ in range(epochs):
-  m, b = gradientDescent(m, b, csvData, L)
+  for _ in range(epochs):
+    m, b = gradientDescent(m, b, csvData, L)
 
-print(m, b)
+  print(m, b)
 
-mplt.scatter(csvData.Hours, csvData.Scores)
-mplt.title("Mathematical Linear Regression")
-mplt.xlabel('Study Time (in hours)')
-mplt.ylabel('Scores: (max: 100)')
-mplt.plot(list(range(1, 12)), [m*x+b for x in range(1, 12)], color="red")
-mplt.show()
+  mplt.scatter(csvData.Hours, csvData.Scores)
+  mplt.title("Mathematical Linear Regression")
+  mplt.xlabel('Study Time (in hours)')
+  mplt.ylabel('Scores: (max: 100)')
+  mplt.plot(list(range(1, 12)), [m*x+b for x in range(1, 12)], color="red")
+  mplt.show()
