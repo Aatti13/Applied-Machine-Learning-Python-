@@ -4,7 +4,7 @@ try:
 except ImportError as e:
   print(e.msg)
 
-df = pd.read_csv('homeprices.csv')
+df = pd.read_csv('Datasets/homeprices.csv')
 
 # Data Pre-processing
 df[['bedrooms']] = df[['bedrooms']].fillna(float(df.iloc[0].bedrooms.mean()))

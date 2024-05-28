@@ -7,7 +7,7 @@ try:
 except ImportError as e:
   print(e.msg)
 
-df = pd.read_csv('canada_per_capita_income.csv')
+df = pd.read_csv('Datasets/canada_per_capita_income.csv')
 
 X = df[['year']]
 y = df['per capita income (US$)']
