@@ -7,63 +7,6 @@
   Derivation given separately
 '''
 
-# Imports
-# try:
-#   import numpy as np
-#   import matplotlib.pyplot as mplt
-#   import pandas as pd
-# except ImportError as e:
-#   print(e.msg)
-
-# def sigmoidFunction(z):
-#   return 1/(1+np.exp(-z))
-
-# def costFunction(X, y, theta):
-#   m = len(y)
-#   h = sigmoidFunction(np.dot(X, theta))
-#   cost = (-1/m) * (np.dot(y, np.log(h))+np.dot((1-y), np.log(1-h)))
-#   return cost
-
-# def gradientDescent(X, y, theta, alpha, epochs):
-#   m = len(y)
-#   costHistory = []
-
-#   for _ in range(epochs):
-#     h = sigmoidFunction(np.dot(X, theta))
-#     gradient = np.dot(X.T, (h-y))/m
-
-#     theta -= alpha * gradient
-#     cost = costFunction(X, y, theta)
-#     costHistory.append(cost)
-  
-#   return cost, costHistory
-
-# def plottingData(X, y, theta):
-#   mplt.scatter(X[y == 0][:, 1], X[y == 0][:, 1], c='red', label='Class 0')
-#   mplt.scatter(X[y == 1][:, 1], X[y == 1][:, 1], c='blue', label='Class 1')
-
-#   xValues = [np.min(X[:, 1]), np.max(X[:, 1])]
-#   yValues = -(theta[0] +  np.dot(theta[1], xValues))/theta[2]
-#   mplt.plot(xValues, yValues, label="Decision Boundary")
-
-#   mplt.xLabel = ('Feature-1')
-#   mplt.ylabel = ('Feature-2')
-#   mplt.legend()
-#   mplt.show()
-
-# if __name__ == "__main__":
-#   X = np.array([[1, 2], [1, 3], [1, 4], [1, 5]])
-#   y = np.array([0, 0, 1, 1])
-
-#   theta = np.zeros(X.shape[1])
-#   alpha = 0.001 
-#   epochs = 1000
-
-#   theta, costHistory = gradientDescent(X, y, theta, alpha, epochs)
-#   plottingData(X, y, theta)
-
-  # print(f"Optimized theta: {theta}\nCost History: {costHistory}")
-
 
 import numpy as np
 import matplotlib.pyplot as plt
